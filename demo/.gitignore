@@ -14,7 +14,7 @@ target/
 .sts4-cache
 
 ### IntelliJ IDEA ###
-.idea
+.idea/
 *.iws
 *.iml
 *.ipr
@@ -34,3 +34,4 @@ build/
 ### Custom ###
 generatorConfig.xml
 .mvn/
+.class
