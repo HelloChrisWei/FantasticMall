@@ -36,6 +36,8 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+            <!--默认的版本是8.0.16不支持MySQL 5-->
+            <version>5.1.47</version>
 <!--            <scope>runtime</scope>-->
             <scope>compile</scope>
         </dependency>
