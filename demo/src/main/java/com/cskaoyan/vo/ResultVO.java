@@ -1,4 +1,4 @@
-package com.cskaoyan.utils;
+package com.cskaoyan.vo;
 
 import java.util.List;
 

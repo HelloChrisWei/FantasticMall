@@ -1,18 +1,18 @@
-package com.cskaoyan.utils;
+package com.cskaoyan.vo;
 
-public class SingleReadVO<T> {
+public class ReadVO<T> {
 
-    private T data;
+    private ResultVO<T> data;
 
     private String errmsg;
 
     private int errno;
 
-    public T getData() {
+    public ResultVO<T> getData() {
         return data;
     }
 
-    public void setData(T data) {
+    public void setData(ResultVO<T> data) {
         this.data = data;
     }
 
