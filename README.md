@@ -1,2 +1,2 @@
 # FantasticMall
-A mall demo for practise.
+A mall demo for practice.
