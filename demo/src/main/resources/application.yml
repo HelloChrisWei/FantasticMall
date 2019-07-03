@@ -1,6 +1,3 @@
-### 这是每个人的data source 只是模板！！！ 后期修改 ###
-### 这是每个人的data source 只是模板！！！ 后期修改 ###
-### 这是每个人的data source 只是模板！！！ 后期修改 ###
 server:
   servlet:
     context-path: /admin
