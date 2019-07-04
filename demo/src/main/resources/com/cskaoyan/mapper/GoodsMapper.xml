@@ -550,7 +550,6 @@
      gallery,
      keywords,
      from cskaoyan_mall_goods
-     limit #{rows} offset #{offset}
   </select>
 
   <!---->

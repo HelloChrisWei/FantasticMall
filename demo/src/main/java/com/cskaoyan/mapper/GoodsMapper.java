@@ -38,7 +38,7 @@ public interface GoodsMapper {
     int updateByPrimaryKey(Goods record);
 
     //自己写的方法
-    List<Goods> selectAllGoodsByPage(@Param("page") int rows,@Param("offset") int offset);
+    List<Goods> selectAllGoodsByPage();
 
     //获取detai
 
