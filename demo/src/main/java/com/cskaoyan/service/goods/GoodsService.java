@@ -6,5 +6,5 @@ import com.cskaoyan.vo.ResultVO;
 
 public interface GoodsService {
     //查出数据库中所有数据
-    ResultVO<Goods> selectAllGoodsByPage(int page, int rows);
+    EasyDataResult<Goods> selectAllGoodsByPage(int page, int rows);
 }

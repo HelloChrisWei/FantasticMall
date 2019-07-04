@@ -12,10 +12,10 @@ public class CoodsController {
     @Autowired
     GoodsService goodsService;
 
-    @RequestMapping("admin/goods/list")
+    @RequestMapping("/goods/list")
     @ResponseBody
-    public EasyDataResult goodsList(int page,int roes){
-        return goodsService.selectAllGoodsByPage(page,roes);
+    public EasyDataResult goodsList(int page,int rows){
+        return goodsService.selectAllGoodsByPage(page,rows);
     }
 
     @RequestMapping("goods/detail")
