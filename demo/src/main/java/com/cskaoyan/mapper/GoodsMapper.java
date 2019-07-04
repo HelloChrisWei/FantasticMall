@@ -1,10 +1,13 @@
 package com.cskaoyan.mapper;
 
+import com.cskaoyan.bean.EasyDataResult;
 import com.cskaoyan.bean.Goods;
 import com.cskaoyan.bean.GoodsExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Component;
 
+@Component
 public interface GoodsMapper {
     long countByExample(GoodsExample example);
 
@@ -33,4 +36,11 @@ public interface GoodsMapper {
     int updateByPrimaryKeyWithBLOBs(Goods record);
 
     int updateByPrimaryKey(Goods record);
+
+    //自己写的方法
+    List<Goods> selectAllGoodsByPage(@Param("page") int rows,@Param("offset") int offset);
+
+    //获取detai
+
+
 }

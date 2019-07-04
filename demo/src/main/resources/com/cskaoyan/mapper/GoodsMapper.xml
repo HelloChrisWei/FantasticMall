@@ -532,4 +532,26 @@
       deleted = #{deleted,jdbcType=BIT}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <!--自己写的sql语句-->
+  <select id="selectAllGoodsByPage" resultType="com.cskaoyan.bean.Goods" resultMap="BaseResultMap">
+    select
+     goods_sn,
+     name,
+     pic_url,
+     share_url,
+     retail_price,
+     counter_price,
+     is_on_sale,
+     is_new,
+     is_hot,
+     brief,
+     detail,
+     gallery,
+     keywords,
+     from cskaoyan_mall_goods
+     limit #{rows} offset #{offset}
+  </select>
+
+  <!---->
 </mapper>

@@ -3,6 +3,7 @@ import com.cskaoyan.bean.EasyDataResult;
 import com.cskaoyan.bean.Goods;
 import com.cskaoyan.mapper.GoodsMapper;
 import com.cskaoyan.service.goods.GoodsService;
+import com.cskaoyan.vo.ResultVO;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,8 @@ public class GoodsServiceImpl implements GoodsService {
     GoodsMapper goodsMapper;
 
     @Override
-    public EasyDataResult<Goods> selectAllGoodsByPage(int page, int rows) {
-        EasyDataResult<Goods> result = new EasyDataResult<Goods>();
+    public ResultVO<Goods> selectAllGoodsByPage(int page, int rows) {
+        ResultVO<Goods> result = new ResultVO<Goods>();
         //PageHelper接收前端数据
         PageHelper.startPage(page,rows);
         //查询所有数据封装成一个list
@@ -27,7 +28,7 @@ public class GoodsServiceImpl implements GoodsService {
         int  total = (int) pageInfo.getTotal();
         //将总条目数封装成一个Javabean给前端用户
         result.setTotal(total);
-        result.setRows(goods);
+        result.setItems(goods);
         return result;
     }
 }

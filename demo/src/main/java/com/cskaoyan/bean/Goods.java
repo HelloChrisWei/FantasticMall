@@ -46,6 +46,50 @@ public class Goods {
 
     private String detail;
 
+    private Category category;
+
+    private GoodsProduct goodsProduct;
+
+    public Boolean getOnSale() {
+        return isOnSale;
+    }
+
+    public void setOnSale(Boolean onSale) {
+        isOnSale = onSale;
+    }
+
+    public Boolean getNew() {
+        return isNew;
+    }
+
+    public void setNew(Boolean aNew) {
+        isNew = aNew;
+    }
+
+    public Boolean getHot() {
+        return isHot;
+    }
+
+    public void setHot(Boolean hot) {
+        isHot = hot;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public GoodsProduct getGoodsProduct() {
+        return goodsProduct;
+    }
+
+    public void setGoodsProduct(GoodsProduct goodsProduct) {
+        this.goodsProduct = goodsProduct;
+    }
+
     public Integer getId() {
         return id;
     }

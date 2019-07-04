@@ -7,6 +7,8 @@ public class EasyDataResult<T> {
 
     private List<T> rows;
 
+
+
     public int getTotal() {
         return total;
     }
