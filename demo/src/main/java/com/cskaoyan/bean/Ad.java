@@ -1,5 +1,8 @@
 package com.cskaoyan.bean;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class Ad {
@@ -15,15 +18,23 @@ public class Ad {
 
     private String content;
 
+//    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     private Date startTime;
+//    private LocalDateTime startTime;
 
+//    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     private Date endTime;
+//    private LocalDateTime endTime;
 
     private Boolean enabled;
 
+//    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     private Date addTime;
+//    private LocalDateTime addTime;
 
+//    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     private Date updateTime;
+//    private LocalDateTime updateTime;
 
     private Boolean deleted;
 
@@ -40,7 +51,7 @@ public class Ad {
     }
 
     public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+        this.name = name;
     }
 
     public String getLink() {
@@ -48,7 +59,7 @@ public class Ad {
     }
 
     public void setLink(String link) {
-        this.link = link == null ? null : link.trim();
+        this.link = link;
     }
 
     public String getUrl() {
@@ -56,7 +67,7 @@ public class Ad {
     }
 
     public void setUrl(String url) {
-        this.url = url == null ? null : url.trim();
+        this.url = url;
     }
 
     public Byte getPosition() {
@@ -72,9 +83,11 @@ public class Ad {
     }
 
     public void setContent(String content) {
-        this.content = content == null ? null : content.trim();
+        this.content = content;
     }
 
+    // 修复：前台显示时间为毫秒数不是日期格式 下同
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     public Date getStartTime() {
         return startTime;
     }
@@ -83,6 +96,7 @@ public class Ad {
         this.startTime = startTime;
     }
 
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     public Date getEndTime() {
         return endTime;
     }
@@ -99,6 +113,7 @@ public class Ad {
         this.enabled = enabled;
     }
 
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     public Date getAddTime() {
         return addTime;
     }
@@ -107,6 +122,7 @@ public class Ad {
         this.addTime = addTime;
     }
 
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     public Date getUpdateTime() {
         return updateTime;
     }
