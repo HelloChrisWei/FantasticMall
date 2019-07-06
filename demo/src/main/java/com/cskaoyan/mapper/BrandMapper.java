@@ -4,8 +4,14 @@ import com.cskaoyan.bean.Brand;
 import com.cskaoyan.bean.BrandExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Component;
 
+@Component
 public interface BrandMapper {
+    List<Brand> select(@Param("id") String id,@Param("name") String name);
+
+    long count(@Param("id") String id,@Param("name") String name);
+
     long countByExample(BrandExample example);
 
     int deleteByExample(BrandExample example);
