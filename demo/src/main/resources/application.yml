@@ -1,7 +1,7 @@
 # Common Configurations
 spring:
   profiles:
-    active: chris
+    active: hjx
 
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -27,8 +27,8 @@ spring:
   profiles: chris
   datasource:
     # if not specified, use HikariPool by default
-#    type: com.alibaba.druid.pool.DruidDataSource
-#    driver-class-name: com.mysql.jdbc.Driver
+    #    type: com.alibaba.druid.pool.DruidDataSource
+    #    driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: 123456
     url: jdbc:mysql://localhost:3306/mall?useSSL=false&characterEncoding=UTF-8
@@ -36,8 +36,8 @@ spring:
 spring:
   profiles: weihao
   datasource:
-#    type: com.alibaba.druid.pool.DruidDataSource
-#    driver-class-name: com.mysql.jdbc.Driver
+    #    type: com.alibaba.druid.pool.DruidDataSource
+    #    driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: 123456
     url: jdbc:mysql://localhost:3306/mall
@@ -48,3 +48,12 @@ spring:
     username: root
     password: root
     url: jdbc:mysql://localhost:3306/cskaoyanmall
+---
+spring:
+  profiles: hjx
+  datasource:
+    #    type: com.alibaba.druid.pool.DruidDataSource
+    #    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/mall

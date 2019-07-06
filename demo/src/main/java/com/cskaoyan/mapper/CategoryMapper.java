@@ -4,8 +4,16 @@ import com.cskaoyan.bean.Category;
 import com.cskaoyan.bean.CategoryExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Component;
 
+@Component
 public interface CategoryMapper {
+    List<Category> getL1();
+
+    List<Category> getL2(Integer id);
+
+    int updateL2Pid(@Param("id") Integer id,@Param("pid") Integer pid);
+
     long countByExample(CategoryExample example);
 
     int deleteByExample(CategoryExample example);
