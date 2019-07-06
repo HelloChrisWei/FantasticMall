@@ -36,3 +36,4 @@ generatorConfig.xml
 .mvn/
 .class
 test/
+application.yml

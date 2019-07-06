@@ -6842,3 +6842,52 @@ Unconditional classes:
 2019-07-06 10:35:53 DEBUG method.annotation.RequestResponseBodyMethodProcessor:268 - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
 2019-07-06 10:35:53 DEBUG method.annotation.RequestResponseBodyMethodProcessor:91 - Writing [com.cskaoyan.vo.CategoryReadVO@2af9ebe0]
 2019-07-06 10:35:53 DEBUG web.servlet.DispatcherServlet:1130 - Completed 200 OK
+2019-07-06 10:42:42 DEBUG web.servlet.DispatcherServlet:91 - GET "/admin/brand/list?page=1&limit=20&sort=add_time&order=desc", parameters={masked}
+2019-07-06 10:42:42 DEBUG method.annotation.RequestMappingHandlerMapping:420 - Mapped to public com.cskaoyan.vo.ReadVO com.cskaoyan.controller.store.BrandController.brandList(int,int,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+2019-07-06 10:42:42 DEBUG mybatis.spring.SqlSessionUtils:49 - Creating a new SqlSession
+2019-07-06 10:42:42 DEBUG mybatis.spring.SqlSessionUtils:49 - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@79eb0e97] was not registered for synchronization because synchronization is not active
+2019-07-06 10:42:42 DEBUG SQL_CACHE:62 - Cache Hit Ratio [SQL_CACHE]: 0.0
+2019-07-06 10:42:42 DEBUG jdbc.datasource.DataSourceUtils:114 - Fetching JDBC Connection from DataSource
+2019-07-06 10:42:42 DEBUG spring.transaction.SpringManagedTransaction:49 - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@8db27f1] will not be managed by Spring
+2019-07-06 10:42:42 DEBUG mapper.BrandMapper.select_COUNT:143 - ==>  Preparing: SELECT count(0) FROM cskaoyan_mall_brand 
+2019-07-06 10:42:42 DEBUG mapper.BrandMapper.select_COUNT:143 - ==> Parameters: 
+2019-07-06 10:42:42 DEBUG mapper.BrandMapper.select_COUNT:143 - <==      Total: 1
+2019-07-06 10:42:42 DEBUG mapper.BrandMapper.select:143 - ==>  Preparing: select id, `name`, `desc`, pic_url, sort_order, floor_price, add_time, update_time, deleted from cskaoyan_mall_brand LIMIT ? 
+2019-07-06 10:42:42 DEBUG mapper.BrandMapper.select:143 - ==> Parameters: 20(Integer)
+2019-07-06 10:42:42 DEBUG mapper.BrandMapper.select:143 - <==      Total: 20
+2019-07-06 10:42:42 DEBUG mybatis.spring.SqlSessionUtils:49 - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@79eb0e97]
+2019-07-06 10:42:42 DEBUG mybatis.spring.SqlSessionUtils:49 - Creating a new SqlSession
+2019-07-06 10:42:42 DEBUG mybatis.spring.SqlSessionUtils:49 - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1d5a6248] was not registered for synchronization because synchronization is not active
+2019-07-06 10:42:42 DEBUG jdbc.datasource.DataSourceUtils:114 - Fetching JDBC Connection from DataSource
+2019-07-06 10:42:42 DEBUG spring.transaction.SpringManagedTransaction:49 - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@8db27f1] will not be managed by Spring
+2019-07-06 10:42:42 DEBUG mapper.BrandMapper.count:143 - ==>  Preparing: select count(*) from cskaoyan_mall_brand 
+2019-07-06 10:42:42 DEBUG mapper.BrandMapper.count:143 - ==> Parameters: 
+2019-07-06 10:42:42 DEBUG mapper.BrandMapper.count:143 - <==      Total: 1
+2019-07-06 10:42:42 DEBUG mybatis.spring.SqlSessionUtils:49 - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1d5a6248]
+2019-07-06 10:42:42 DEBUG method.annotation.RequestResponseBodyMethodProcessor:268 - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2019-07-06 10:42:42 DEBUG method.annotation.RequestResponseBodyMethodProcessor:91 - Writing [com.cskaoyan.vo.ReadVO@7d20ee5c]
+2019-07-06 10:42:42 DEBUG web.servlet.DispatcherServlet:1130 - Completed 200 OK
+2019-07-06 10:42:57 DEBUG web.servlet.DispatcherServlet:91 - POST "/admin/storage/create", parameters={}
+2019-07-06 10:42:57 DEBUG servlet.handler.SimpleUrlHandlerMapping:420 - Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2019-07-06 10:42:57 DEBUG servlet.resource.ResourceHttpRequestHandler:453 - Resource not found
+2019-07-06 10:42:57 DEBUG web.servlet.DispatcherServlet:1130 - Completed 404 NOT_FOUND
+2019-07-06 10:42:57 DEBUG web.servlet.DispatcherServlet:91 - "ERROR" dispatch for POST "/admin/error", parameters={}
+2019-07-06 10:42:57 DEBUG method.annotation.RequestMappingHandlerMapping:420 - Mapped to public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-07-06 10:42:57 DEBUG method.annotation.HttpEntityMethodProcessor:268 - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2019-07-06 10:42:57 DEBUG method.annotation.HttpEntityMethodProcessor:91 - Writing [{timestamp=Sat Jul 06 10:42:57 CST 2019, status=404, error=Not Found, message=No message available,  (truncated)...]
+2019-07-06 10:42:57 DEBUG web.servlet.DispatcherServlet:1126 - Exiting from "ERROR" dispatch, status 404
+2019-07-06 10:43:16 DEBUG web.servlet.DispatcherServlet:91 - POST "/admin/storage/create", parameters={}
+2019-07-06 10:43:16 DEBUG servlet.handler.SimpleUrlHandlerMapping:420 - Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2019-07-06 10:43:16 DEBUG servlet.resource.ResourceHttpRequestHandler:453 - Resource not found
+2019-07-06 10:43:16 DEBUG web.servlet.DispatcherServlet:1130 - Completed 404 NOT_FOUND
+2019-07-06 10:43:16 DEBUG web.servlet.DispatcherServlet:91 - "ERROR" dispatch for POST "/admin/error", parameters={}
+2019-07-06 10:43:16 DEBUG method.annotation.RequestMappingHandlerMapping:420 - Mapped to public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-07-06 10:43:16 DEBUG method.annotation.HttpEntityMethodProcessor:268 - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2019-07-06 10:43:16 DEBUG method.annotation.HttpEntityMethodProcessor:91 - Writing [{timestamp=Sat Jul 06 10:43:16 CST 2019, status=404, error=Not Found, message=No message available,  (truncated)...]
+2019-07-06 10:43:16 DEBUG web.servlet.DispatcherServlet:1126 - Exiting from "ERROR" dispatch, status 404
+2019-07-06 10:44:27 DEBUG servlet.context.AnnotationConfigServletWebServerApplicationContext:1002 - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@12329fa4, started on Sat Jul 06 10:35:34 CST 2019
+2019-07-06 10:44:27 DEBUG core.env.PropertySourcesPropertyResolver:115 - Found key 'spring.liveBeansView.mbeanDomain' in PropertySource 'systemProperties' with value of type String
+2019-07-06 10:44:27 DEBUG export.annotation.AnnotationMBeanExporter:451 - Unregistering JMX-exposed beans on shutdown
+2019-07-06 10:44:27 DEBUG export.annotation.AnnotationMBeanExporter:185 - Unregistering JMX-exposed beans
+2019-07-06 10:44:27 INFO  scheduling.concurrent.ThreadPoolTaskExecutor:208 - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-06 10:44:27 INFO  druid.pool.DruidDataSource:1825 - {dataSource-1} closed
