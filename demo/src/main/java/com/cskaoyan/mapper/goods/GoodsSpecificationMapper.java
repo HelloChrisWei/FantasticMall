@@ -1,10 +1,13 @@
-package com.cskaoyan.mapper;
+package com.cskaoyan.mapper.goods;
 
-import com.cskaoyan.bean.GoodsSpecification;
-import com.cskaoyan.bean.GoodsSpecificationExample;
+import com.cskaoyan.bean.goods.GoodsSpecification;
+import com.cskaoyan.bean.goods.GoodsSpecificationExample;
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
+import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Component;
+
+@Component
 public interface GoodsSpecificationMapper {
     long countByExample(GoodsSpecificationExample example);
 

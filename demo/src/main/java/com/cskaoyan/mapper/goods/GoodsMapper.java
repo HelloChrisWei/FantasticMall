@@ -1,8 +1,7 @@
-package com.cskaoyan.mapper;
+package com.cskaoyan.mapper.goods;
 
-import com.cskaoyan.bean.EasyDataResult;
-import com.cskaoyan.bean.Goods;
-import com.cskaoyan.bean.GoodsExample;
+import com.cskaoyan.bean.goods.Goods;
+import com.cskaoyan.bean.goods.GoodsExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
@@ -36,11 +35,6 @@ public interface GoodsMapper {
     int updateByPrimaryKeyWithBLOBs(Goods record);
 
     int updateByPrimaryKey(Goods record);
-
-    //自己写的方法
-    List<Goods> selectAllGoodsByPage();
-
-    //获取detai
 
 
 }

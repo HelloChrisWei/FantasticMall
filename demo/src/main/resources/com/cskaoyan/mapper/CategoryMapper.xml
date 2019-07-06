@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.cskaoyan.mapper.CategoryMapper">
+<mapper namespace="com.cskaoyan.mapper.goods.CategoryMapper">
   <resultMap id="BaseResultMap" type="com.cskaoyan.bean.Category">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
@@ -74,7 +74,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, name, keywords, desc, pid, icon_url, pic_url, level, sort_order, add_time, update_time, 
+    id, `name`, keywords, `desc`, pid, icon_url, pic_url, `level`, sort_order, add_time, update_time,
     deleted
   </sql>
   <select id="selectByExample" parameterType="com.cskaoyan.bean.CategoryExample" resultMap="BaseResultMap">
@@ -270,7 +270,7 @@
     update cskaoyan_mall_category
     <set>
       <if test="name != null">
-        name = #{name,jdbcType=VARCHAR},
+        `name` = #{name,jdbcType=VARCHAR},
       </if>
       <if test="keywords != null">
         keywords = #{keywords,jdbcType=VARCHAR},
@@ -320,4 +320,21 @@
       deleted = #{deleted,jdbcType=BIT}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <!--查询category的id和pid-->
+  <select id="selectIdsById" parameterType="com.cskaoyan.bean.Category" resultMap="BaseResultMap" >
+    select
+      id, pid
+    from
+      cskaoyan_mall_category
+      where id = #{id}
+  </select>
+  <!--查询category的id和name-->
+  <select id="selectCategoryList" parameterType="com.cskaoyan.bean.Category" resultMap="BaseResultMap" >
+    select
+      id, pid,name
+    from
+      cskaoyan_mall_category
+      where id = #{id}
+  </select>
 </mapper>

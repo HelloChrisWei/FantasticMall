@@ -1,4 +1,4 @@
-package com.cskaoyan.bean;
+package com.cskaoyan.bean.goods;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

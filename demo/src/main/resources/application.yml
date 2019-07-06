@@ -1,7 +1,8 @@
 # Common Configurations
 spring:
   profiles:
-    active: chris
+#    active: chris
+    active: donghao
 
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -47,4 +48,4 @@ spring:
   datasource:
     username: root
     password: root
-    url: jdbc:mysql://localhost:3306/cskaoyanmall
+    url: jdbc:mysql://localhost:3306/cskaoyanmall?useSSL=false&characterEncoding=UTF-8

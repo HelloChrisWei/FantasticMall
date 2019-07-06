@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.cskaoyan.mapper.GoodsSpecificationMapper">
-  <resultMap id="BaseResultMap" type="com.cskaoyan.bean.GoodsSpecification">
+<mapper namespace="com.cskaoyan.mapper.goods.GoodsAttributeMapper">
+  <resultMap id="BaseResultMap" type="com.cskaoyan.bean.goods.GoodsAttribute">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="goods_id" jdbcType="INTEGER" property="goodsId" />
-    <result column="specification" jdbcType="VARCHAR" property="specification" />
+    <result column="attribute" jdbcType="VARCHAR" property="attribute" />
     <result column="value" jdbcType="VARCHAR" property="value" />
-    <result column="pic_url" jdbcType="VARCHAR" property="picUrl" />
     <result column="add_time" jdbcType="TIMESTAMP" property="addTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="deleted" jdbcType="BIT" property="deleted" />
@@ -70,15 +69,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, goods_id, specification, value, pic_url, add_time, update_time, deleted
+    id, goods_id, attribute, value, add_time, update_time, deleted
   </sql>
-  <select id="selectByExample" parameterType="com.cskaoyan.bean.GoodsSpecificationExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.cskaoyan.bean.goods.GoodsAttributeExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from cskaoyan_mall_goods_specification
+    from cskaoyan_mall_goods_attribute
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -89,29 +88,29 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from cskaoyan_mall_goods_specification
+    from cskaoyan_mall_goods_attribute
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from cskaoyan_mall_goods_specification
+    delete from cskaoyan_mall_goods_attribute
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.cskaoyan.bean.GoodsSpecificationExample">
-    delete from cskaoyan_mall_goods_specification
+  <delete id="deleteByExample" parameterType="com.cskaoyan.bean.goods.GoodsAttributeExample">
+    delete from cskaoyan_mall_goods_attribute
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.cskaoyan.bean.GoodsSpecification">
-    insert into cskaoyan_mall_goods_specification (id, goods_id, specification, 
-      value, pic_url, add_time, 
-      update_time, deleted)
-    values (#{id,jdbcType=INTEGER}, #{goodsId,jdbcType=INTEGER}, #{specification,jdbcType=VARCHAR}, 
-      #{value,jdbcType=VARCHAR}, #{picUrl,jdbcType=VARCHAR}, #{addTime,jdbcType=TIMESTAMP}, 
-      #{updateTime,jdbcType=TIMESTAMP}, #{deleted,jdbcType=BIT})
+  <insert id="insert" parameterType="com.cskaoyan.bean.goods.GoodsAttribute">
+    insert into cskaoyan_mall_goods_attribute (id, goods_id, attribute, 
+      value, add_time, update_time, 
+      deleted)
+    values (#{id,jdbcType=INTEGER}, #{goodsId,jdbcType=INTEGER}, #{attribute,jdbcType=VARCHAR}, 
+      #{value,jdbcType=VARCHAR}, #{addTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{deleted,jdbcType=BIT})
   </insert>
-  <insert id="insertSelective" parameterType="com.cskaoyan.bean.GoodsSpecification">
-    insert into cskaoyan_mall_goods_specification
+  <insert id="insertSelective" parameterType="com.cskaoyan.bean.goods.GoodsAttribute">
+    insert into cskaoyan_mall_goods_attribute
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
@@ -119,14 +118,11 @@
       <if test="goodsId != null">
         goods_id,
       </if>
-      <if test="specification != null">
-        specification,
+      <if test="attribute != null">
+        attribute,
       </if>
       <if test="value != null">
         value,
-      </if>
-      <if test="picUrl != null">
-        pic_url,
       </if>
       <if test="addTime != null">
         add_time,
@@ -145,14 +141,11 @@
       <if test="goodsId != null">
         #{goodsId,jdbcType=INTEGER},
       </if>
-      <if test="specification != null">
-        #{specification,jdbcType=VARCHAR},
+      <if test="attribute != null">
+        #{attribute,jdbcType=VARCHAR},
       </if>
       <if test="value != null">
         #{value,jdbcType=VARCHAR},
-      </if>
-      <if test="picUrl != null">
-        #{picUrl,jdbcType=VARCHAR},
       </if>
       <if test="addTime != null">
         #{addTime,jdbcType=TIMESTAMP},
@@ -165,14 +158,14 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.cskaoyan.bean.GoodsSpecificationExample" resultType="java.lang.Long">
-    select count(*) from cskaoyan_mall_goods_specification
+  <select id="countByExample" parameterType="com.cskaoyan.bean.goods.GoodsAttributeExample" resultType="java.lang.Long">
+    select count(*) from cskaoyan_mall_goods_attribute
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update cskaoyan_mall_goods_specification
+    update cskaoyan_mall_goods_attribute
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=INTEGER},
@@ -180,14 +173,11 @@
       <if test="record.goodsId != null">
         goods_id = #{record.goodsId,jdbcType=INTEGER},
       </if>
-      <if test="record.specification != null">
-        specification = #{record.specification,jdbcType=VARCHAR},
+      <if test="record.attribute != null">
+        attribute = #{record.attribute,jdbcType=VARCHAR},
       </if>
       <if test="record.value != null">
         value = #{record.value,jdbcType=VARCHAR},
-      </if>
-      <if test="record.picUrl != null">
-        pic_url = #{record.picUrl,jdbcType=VARCHAR},
       </if>
       <if test="record.addTime != null">
         add_time = #{record.addTime,jdbcType=TIMESTAMP},
@@ -204,12 +194,11 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update cskaoyan_mall_goods_specification
+    update cskaoyan_mall_goods_attribute
     set id = #{record.id,jdbcType=INTEGER},
       goods_id = #{record.goodsId,jdbcType=INTEGER},
-      specification = #{record.specification,jdbcType=VARCHAR},
+      attribute = #{record.attribute,jdbcType=VARCHAR},
       value = #{record.value,jdbcType=VARCHAR},
-      pic_url = #{record.picUrl,jdbcType=VARCHAR},
       add_time = #{record.addTime,jdbcType=TIMESTAMP},
       update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       deleted = #{record.deleted,jdbcType=BIT}
@@ -217,20 +206,17 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.cskaoyan.bean.GoodsSpecification">
-    update cskaoyan_mall_goods_specification
+  <update id="updateByPrimaryKeySelective" parameterType="com.cskaoyan.bean.goods.GoodsAttribute">
+    update cskaoyan_mall_goods_attribute
     <set>
       <if test="goodsId != null">
         goods_id = #{goodsId,jdbcType=INTEGER},
       </if>
-      <if test="specification != null">
-        specification = #{specification,jdbcType=VARCHAR},
+      <if test="attribute != null">
+        attribute = #{attribute,jdbcType=VARCHAR},
       </if>
       <if test="value != null">
         value = #{value,jdbcType=VARCHAR},
-      </if>
-      <if test="picUrl != null">
-        pic_url = #{picUrl,jdbcType=VARCHAR},
       </if>
       <if test="addTime != null">
         add_time = #{addTime,jdbcType=TIMESTAMP},
@@ -244,12 +230,11 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.cskaoyan.bean.GoodsSpecification">
-    update cskaoyan_mall_goods_specification
+  <update id="updateByPrimaryKey" parameterType="com.cskaoyan.bean.goods.GoodsAttribute">
+    update cskaoyan_mall_goods_attribute
     set goods_id = #{goodsId,jdbcType=INTEGER},
-      specification = #{specification,jdbcType=VARCHAR},
+      attribute = #{attribute,jdbcType=VARCHAR},
       value = #{value,jdbcType=VARCHAR},
-      pic_url = #{picUrl,jdbcType=VARCHAR},
       add_time = #{addTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       deleted = #{deleted,jdbcType=BIT}

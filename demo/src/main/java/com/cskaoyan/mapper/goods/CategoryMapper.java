@@ -1,10 +1,12 @@
-package com.cskaoyan.mapper;
+package com.cskaoyan.mapper.goods;
 
 import com.cskaoyan.bean.Category;
 import com.cskaoyan.bean.CategoryExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Component;
 
+@Component
 public interface CategoryMapper {
     long countByExample(CategoryExample example);
 
@@ -27,4 +29,8 @@ public interface CategoryMapper {
     int updateByPrimaryKeySelective(Category record);
 
     int updateByPrimaryKey(Category record);
+
+    Category selectIdsById(Integer id);
+
+    List<Category> selectCategoryList(Integer id);
 }
