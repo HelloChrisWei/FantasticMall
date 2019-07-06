@@ -1,8 +1,12 @@
 package com.cskaoyan.bean;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class Admin {
+
     private Integer id;
 
     private String username;
@@ -11,17 +15,22 @@ public class Admin {
 
     private String lastLoginIp;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date lastLoginTime;
 
     private String avatar;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date addTime;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date updateTime;
 
     private Boolean deleted;
 
-    private String roleIds;
+    private int[] roleIds;
+
+    private String permission;
 
     public Integer getId() {
         return id;
@@ -36,7 +45,7 @@ public class Admin {
     }
 
     public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
+        this.username = username;
     }
 
     public String getPassword() {
@@ -44,7 +53,7 @@ public class Admin {
     }
 
     public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
+        this.password = password;
     }
 
     public String getLastLoginIp() {
@@ -52,9 +61,18 @@ public class Admin {
     }
 
     public void setLastLoginIp(String lastLoginIp) {
-        this.lastLoginIp = lastLoginIp == null ? null : lastLoginIp.trim();
+        this.lastLoginIp = lastLoginIp;
     }
 
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     public Date getLastLoginTime() {
         return lastLoginTime;
     }
@@ -63,14 +81,7 @@ public class Admin {
         this.lastLoginTime = lastLoginTime;
     }
 
-    public String getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(String avatar) {
-        this.avatar = avatar == null ? null : avatar.trim();
-    }
-
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     public Date getAddTime() {
         return addTime;
     }
@@ -79,6 +90,7 @@ public class Admin {
         this.addTime = addTime;
     }
 
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     public Date getUpdateTime() {
         return updateTime;
     }
@@ -95,11 +107,19 @@ public class Admin {
         this.deleted = deleted;
     }
 
-    public String getRoleIds() {
+    public int[] getRoleIds() {
         return roleIds;
     }
 
-    public void setRoleIds(String roleIds) {
-        this.roleIds = roleIds == null ? null : roleIds.trim();
+    public void setRoleIds(int[] roleIds) {
+        this.roleIds = roleIds;
+    }
+
+    public String getPermission() {
+        return permission;
+    }
+
+    public void setPermission(String permission) {
+        this.permission = permission;
     }
 }

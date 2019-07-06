@@ -2,8 +2,9 @@ package com.cskaoyan.mapper;
 
 import com.cskaoyan.bean.Admin;
 import com.cskaoyan.bean.AdminExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface AdminMapper {
     long countByExample(AdminExample example);
@@ -27,4 +28,9 @@ public interface AdminMapper {
     int updateByPrimaryKeySelective(Admin record);
 
     int updateByPrimaryKey(Admin record);
+
+    List<Admin> selectAdminByPage(@Param("limit") int limit, @Param("offset") int offset);
+
+    List<Admin> selectAdminByUserName(@Param("username") String username);
+
 }
