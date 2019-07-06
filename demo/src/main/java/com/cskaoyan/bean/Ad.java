@@ -86,6 +86,7 @@ public class Ad {
         this.content = content;
     }
 
+    // 修复：前台显示时间为毫秒数不是日期格式 下同
     @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     public Date getStartTime() {
         return startTime;

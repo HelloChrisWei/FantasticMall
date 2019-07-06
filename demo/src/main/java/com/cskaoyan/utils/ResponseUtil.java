@@ -73,7 +73,7 @@ public class ResponseUtil {
     }
 
     public static Object badArgument() {
-        return fail(401, "参数不对");
+        return fail(401, "Wrong Argument Error");
     }
 
 

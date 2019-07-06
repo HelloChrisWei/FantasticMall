@@ -49,8 +49,6 @@ public class AdminAdController {
         return ResponseUtil.ok();
     }
 
-
-    // FIXME 前台显示时间为毫秒数不是日期格式
     @PostMapping("/update")
     public Object update(@RequestBody Ad ad) {
         Object error = validate(ad);
@@ -65,23 +63,43 @@ public class AdminAdController {
 
     }
 
+    @PostMapping("/create")
+    public Object create(@RequestBody Ad ad) {
+        Object error = validate(ad);
+        if (error != null) {
+            return error;
+        }
+        adService.add(ad);
+        return ResponseUtil.ok(ad);
+    }
+
 
 
 
     /**
-     * 验证对象是否合法
+     * 验证对象的属性是否合法
      * @param ad 传入的对象
      * @return
      */
     private Object validate(Ad ad) {
+        // 验证name属性是否合法 数据库中name属性非空
         String name = ad.getName();
         if (StringUtils.isEmpty(name)) {
             return ResponseUtil.badArgument();
         }
-        String content = ad.getContent();
-        if (StringUtils.isEmpty(content)) {
+
+        // 验证link属性是否合法 数据库中link属性非空
+        String link = ad.getLink();
+        if (StringUtils.isEmpty(link)) {
             return ResponseUtil.badArgument();
         }
+
+        // 验证url属性是否合法 数据库中url属性非空
+        String url = ad.getUrl();
+        if (StringUtils.isEmpty(url)) {
+            return ResponseUtil.badArgument();
+        }
+
         return null;
     }
 

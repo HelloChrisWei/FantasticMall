@@ -52,4 +52,10 @@ public class LitemallAdService {
         ad.setUpdateTime(new Date());
         return adMapper.updateByPrimaryKeySelective(ad);
     }
+
+    public void add(Ad ad) {
+        ad.setAddTime(new Date());
+        ad.setUpdateTime(new Date());
+        adMapper.insertSelective(ad);
+    }
 }
