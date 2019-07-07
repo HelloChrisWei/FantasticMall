@@ -4,7 +4,9 @@ import com.cskaoyan.bean.Comment;
 import com.cskaoyan.bean.CommentExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Component;
 
+@Component
 public interface CommentMapper {
     long countByExample(CommentExample example);
 
