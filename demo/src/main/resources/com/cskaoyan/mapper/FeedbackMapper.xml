@@ -320,4 +320,57 @@
       deleted = #{deleted,jdbcType=BIT}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="selectAllFeedback" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from cskaoyan_mall_feedback
+  </select>
+  <select id="selectFeedBackByUsernameAndFeedBackId" resultMap="BaseResultMap">
+    select id,
+    user_id,
+      username,
+      mobile,
+      feed_type,
+      content,
+      status,
+      has_picture,
+      pic_urls,
+      add_time,
+      update_time,
+      deleted
+    from cskaoyan_mall_feedback
+    where id = #{id} and username = #{username}
+  </select>
+  <select id="selectFeedBackByFeedBackId" resultMap="BaseResultMap">
+    select id,
+    user_id,
+      username,
+      mobile,
+      feed_type,
+      content,
+      status,
+      has_picture,
+      pic_urls,
+      add_time,
+      update_time,
+      deleted
+    from cskaoyan_mall_feedback
+    where id = #{id}
+  </select>
+  <select id="selectFeedBackByUsername" resultMap="BaseResultMap">
+    select id,
+    user_id,
+      username,
+      mobile,
+      feed_type,
+      content,
+      status,
+      has_picture,
+      pic_urls,
+      add_time,
+      update_time,
+      deleted
+    from cskaoyan_mall_feedback
+    where username like #{username}
+  </select>
 </mapper>

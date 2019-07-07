@@ -225,4 +225,7 @@
       deleted = #{deleted,jdbcType=BIT}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <!--自己写的-->
+
 </mapper>

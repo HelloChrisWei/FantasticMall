@@ -240,4 +240,47 @@
       deleted = #{deleted,jdbcType=BIT}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="selectSearchAllHistory" resultMap="BaseResultMap">
+    select id,
+      user_id,
+      `keyword`,
+      `from`,
+      add_time,
+      update_time,
+      deleted
+      from cskaoyan_mall_search_history
+  </select>
+  <select id="selectSearchHistoryByUserIdAndKeyword" resultMap="BaseResultMap">
+    select id,
+      user_id,
+      `keyword`,
+      `from`,
+      add_time,
+      update_time,
+      deleted
+      from cskaoyan_mall_search_history
+    where user_id = #{userId} and keyword = #{keyword}
+  </select>
+  <select id="selectSearchHistoryByUserId" resultMap="BaseResultMap">
+    select id,
+      user_id,
+      `keyword`,
+      `from`,
+      add_time,
+      update_time,
+      deleted
+      from cskaoyan_mall_search_history
+    where user_id = #{userId}
+  </select>
+  <select id="selectSearchHistoryByKeyword" resultMap="BaseResultMap">
+    select id,
+      user_id,
+      `keyword`,
+      `from`,
+      add_time,
+      update_time,
+      deleted
+      from cskaoyan_mall_search_history
+    where keyword = #{keyword}
+  </select>
 </mapper>

@@ -1,5 +1,7 @@
 package com.cskaoyan.bean;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class Footprint {
@@ -38,7 +40,7 @@ public class Footprint {
     public void setGoodsId(Integer goodsId) {
         this.goodsId = goodsId;
     }
-
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     public Date getAddTime() {
         return addTime;
     }
@@ -46,7 +48,7 @@ public class Footprint {
     public void setAddTime(Date addTime) {
         this.addTime = addTime;
     }
-
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     public Date getUpdateTime() {
         return updateTime;
     }

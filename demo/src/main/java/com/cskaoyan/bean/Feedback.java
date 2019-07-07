@@ -1,5 +1,7 @@
 package com.cskaoyan.bean;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class Feedback {
@@ -98,7 +100,7 @@ public class Feedback {
     public void setPicUrls(String picUrls) {
         this.picUrls = picUrls == null ? null : picUrls.trim();
     }
-
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     public Date getAddTime() {
         return addTime;
     }
@@ -106,7 +108,7 @@ public class Feedback {
     public void setAddTime(Date addTime) {
         this.addTime = addTime;
     }
-
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     public Date getUpdateTime() {
         return updateTime;
     }
