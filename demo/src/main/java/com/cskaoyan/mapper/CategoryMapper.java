@@ -1,4 +1,4 @@
-package com.cskaoyan.mapper.goods;
+package com.cskaoyan.mapper;
 
 import com.cskaoyan.bean.Category;
 import com.cskaoyan.bean.CategoryExample;

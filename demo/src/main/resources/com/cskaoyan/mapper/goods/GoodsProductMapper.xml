@@ -4,7 +4,7 @@
   <resultMap id="BaseResultMap" type="com.cskaoyan.bean.goods.GoodsProduct">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="goods_id" jdbcType="INTEGER" property="goodsId" />
-    <result column="specifications" jdbcType="VARCHAR" property="specifications" />
+    <result column="specifications" jdbcType="VARCHAR" property="specifications" typeHandler="com.cskaoyan.utils.ArrayToStringHandler" />
     <result column="price" jdbcType="DECIMAL" property="price" />
     <result column="number" jdbcType="INTEGER" property="number" />
     <result column="url" jdbcType="VARCHAR" property="url" />
@@ -71,7 +71,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, goods_id, specifications, price, number, url, add_time, update_time, deleted
+    id, goods_id, specifications, price, `number`, url, add_time, update_time, deleted
   </sql>
   <select id="selectByExample" parameterType="com.cskaoyan.bean.goods.GoodsProductExample" resultMap="BaseResultMap">
     select
@@ -105,10 +105,10 @@
   </delete>
   <insert id="insert" parameterType="com.cskaoyan.bean.goods.GoodsProduct">
     insert into cskaoyan_mall_goods_product (id, goods_id, specifications, 
-      price, number, url, 
+      price, `number`, url,
       add_time, update_time, deleted
       )
-    values (#{id,jdbcType=INTEGER}, #{goodsId,jdbcType=INTEGER}, #{specifications,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=INTEGER}, #{goodsId,jdbcType=INTEGER}, #{specifications,jdbcType=VARCHAR,typeHandler=com.cskaoyan.utils.ArrayToStringHandler},
       #{price,jdbcType=DECIMAL}, #{number,jdbcType=INTEGER}, #{url,jdbcType=VARCHAR}, 
       #{addTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{deleted,jdbcType=BIT}
       )
@@ -129,7 +129,7 @@
         price,
       </if>
       <if test="number != null">
-        number,
+        `number`,
       </if>
       <if test="url != null">
         url,
@@ -152,7 +152,7 @@
         #{goodsId,jdbcType=INTEGER},
       </if>
       <if test="specifications != null">
-        #{specifications,jdbcType=VARCHAR},
+        #{specifications,jdbcType=VARCHAR,typeHandler=com.cskaoyan.utils.ArrayToStringHandler},
       </if>
       <if test="price != null">
         #{price,jdbcType=DECIMAL},
@@ -190,7 +190,7 @@
         goods_id = #{record.goodsId,jdbcType=INTEGER},
       </if>
       <if test="record.specifications != null">
-        specifications = #{record.specifications,jdbcType=VARCHAR},
+        specifications = #{record.specifications,jdbcType=VARCHAR,typeHandler=com.cskaoyan.utils.ArrayToStringHandler},
       </if>
       <if test="record.price != null">
         price = #{record.price,jdbcType=DECIMAL},
@@ -221,7 +221,7 @@
       goods_id = #{record.goodsId,jdbcType=INTEGER},
       specifications = #{record.specifications,jdbcType=VARCHAR},
       price = #{record.price,jdbcType=DECIMAL},
-      number = #{record.number,jdbcType=INTEGER},
+      `number` = #{record.number,jdbcType=INTEGER,typeHandler=com.cskaoyan.utils.ArrayToStringHandler},
       url = #{record.url,jdbcType=VARCHAR},
       add_time = #{record.addTime,jdbcType=TIMESTAMP},
       update_time = #{record.updateTime,jdbcType=TIMESTAMP},
@@ -237,7 +237,7 @@
         goods_id = #{goodsId,jdbcType=INTEGER},
       </if>
       <if test="specifications != null">
-        specifications = #{specifications,jdbcType=VARCHAR},
+        specifications = #{specifications,jdbcType=VARCHAR,typeHandler=com.cskaoyan.utils.ArrayToStringHandler},
       </if>
       <if test="price != null">
         price = #{price,jdbcType=DECIMAL},
@@ -263,9 +263,9 @@
   <update id="updateByPrimaryKey" parameterType="com.cskaoyan.bean.goods.GoodsProduct">
     update cskaoyan_mall_goods_product
     set goods_id = #{goodsId,jdbcType=INTEGER},
-      specifications = #{specifications,jdbcType=VARCHAR},
+      specifications = #{specifications,jdbcType=VARCHAR,typeHandler=com.cskaoyan.utils.ArrayToStringHandler},
       price = #{price,jdbcType=DECIMAL},
-      number = #{number,jdbcType=INTEGER},
+      `number` = #{number,jdbcType=INTEGER},
       url = #{url,jdbcType=VARCHAR},
       add_time = #{addTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},

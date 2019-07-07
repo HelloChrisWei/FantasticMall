@@ -1,10 +1,12 @@
-package com.cskaoyan.mapper;
+package com.cskaoyan.mapper.goods;
 
-import com.cskaoyan.bean.Comment;
-import com.cskaoyan.bean.CommentExample;
+import com.cskaoyan.bean.goods.Comment;
+import com.cskaoyan.bean.goods.CommentExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Component;
 
+@Component
 public interface CommentMapper {
     long countByExample(CommentExample example);
 

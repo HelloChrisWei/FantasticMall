@@ -35,12 +35,13 @@ public class GoodsSpecification {
         this.goodsId = goodsId;
     }
 
+
     public String getSpecification() {
         return specification;
     }
 
     public void setSpecification(String specification) {
-        this.specification = specification == null ? null : specification.trim();
+        this.specification = specification;
     }
 
     public String getValue() {
@@ -48,7 +49,7 @@ public class GoodsSpecification {
     }
 
     public void setValue(String value) {
-        this.value = value == null ? null : value.trim();
+        this.value = value;
     }
 
     public String getPicUrl() {
@@ -56,7 +57,7 @@ public class GoodsSpecification {
     }
 
     public void setPicUrl(String picUrl) {
-        this.picUrl = picUrl == null ? null : picUrl.trim();
+        this.picUrl = picUrl;
     }
 
     public Date getAddTime() {
