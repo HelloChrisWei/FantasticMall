@@ -320,4 +320,108 @@
       deleted = #{deleted,jdbcType=BIT}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <resultMap id="MyBaseResultMap" type="com.cskaoyan.bean.Address">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="province_id" jdbcType="INTEGER" property="provinceId" />
+    <result column="city_id" jdbcType="INTEGER" property="cityId" />
+    <result column="area_id" jdbcType="INTEGER" property="areaId" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="is_default" jdbcType="BIT" property="isDefault" />
+    <result column="add_time" jdbcType="TIMESTAMP" property="addTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="deleted" jdbcType="BIT" property="deleted" />
+    <result column="city" property="city"/>
+    <result column="province" property="province"/>
+    <result column="area" property="area"/>
+  </resultMap>
+  <select id="selectAllAddress" resultMap="MyBaseResultMap">
+     select cma.id,
+         cma.name,
+         cma.user_id,
+         cma.province_id,
+         cma.city_id,
+         cma.area_id,
+         cma.address,
+         cma.mobile,
+         cma.is_default,
+         cma.add_time,
+         cma.update_time,
+         cma.deleted,
+         cmr1.name as city,
+		 cmr2.name as province,
+         cmr3.name as area
+         from cskaoyan_mall_address cma
+         LEFT JOIN cskaoyan_mall_region cmr1 on cma.province_id = cmr1.code
+		 LEFT JOIN cskaoyan_mall_region cmr2 on cma.city_id = cmr2.code
+		 LEFT JOIN cskaoyan_mall_region cmr3 on cma.area_id = cmr3.code
+  </select>
+  <select id="selectAddressByUserIdAndName" resultMap="MyBaseResultMap">
+     select cma.id,
+         cma.name,
+         cma.user_id,
+         cma.province_id,
+         cma.city_id,
+         cma.area_id,
+         cma.address,
+         cma.mobile,
+         cma.is_default,
+         cma.add_time,
+         cma.update_time,
+         cma.deleted,
+         cmr1.name as city,
+		 cmr2.name as province,
+         cmr3.name as area
+         from cskaoyan_mall_address cma
+         LEFT JOIN cskaoyan_mall_region cmr1 on cma.province_id = cmr1.code
+		 LEFT JOIN cskaoyan_mall_region cmr2 on cma.city_id = cmr2.code
+		 LEFT JOIN cskaoyan_mall_region cmr3 on cma.area_id = cmr3.code
+         where user_id = #{userId} and name like #{name}
+  </select>
+  <select id="selectAddressByUserId" resultMap="MyBaseResultMap">
+     select cma.id,
+         cma.name,
+         cma.user_id,
+         cma.province_id,
+         cma.city_id,
+         cma.area_id,
+         cma.address,
+         cma.mobile,
+         cma.is_default,
+         cma.add_time,
+         cma.update_time,
+         cma.deleted,
+         cmr1.name as city,
+		 cmr2.name as province,
+         cmr3.name as area
+         from cskaoyan_mall_address cma
+         LEFT JOIN cskaoyan_mall_region cmr1 on cma.province_id = cmr1.code
+		 LEFT JOIN cskaoyan_mall_region cmr2 on cma.city_id = cmr2.code
+		 LEFT JOIN cskaoyan_mall_region cmr3 on cma.area_id = cmr3.code
+         where user_id = #{userId}
+  </select>
+  <select id="selectAddressByName" resultMap="MyBaseResultMap">
+    select cma.id,
+         cma.name,
+         cma.user_id,
+         cma.province_id,
+         cma.city_id,
+         cma.area_id,
+         cma.address,
+         cma.mobile,
+         cma.is_default,
+         cma.add_time,
+         cma.update_time,
+         cma.deleted,
+         cmr1.name as city,
+		 cmr2.name as province,
+         cmr3.name as area
+         from cskaoyan_mall_address cma
+         LEFT JOIN cskaoyan_mall_region cmr1 on cma.province_id = cmr1.code
+		 LEFT JOIN cskaoyan_mall_region cmr2 on cma.city_id = cmr2.code
+		 LEFT JOIN cskaoyan_mall_region cmr3 on cma.area_id = cmr3.code
+         where cma.name like #{username}
+  </select>
 </mapper>

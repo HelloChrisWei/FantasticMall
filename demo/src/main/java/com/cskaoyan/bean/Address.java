@@ -27,6 +27,12 @@ public class Address {
 
     private Boolean deleted;
 
+    private String city;
+
+    private String area;
+
+    private String province;
+
     public Integer getId() {
         return id;
     }
@@ -121,5 +127,29 @@ public class Address {
 
     public void setDeleted(Boolean deleted) {
         this.deleted = deleted;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
     }
 }

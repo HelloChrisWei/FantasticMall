@@ -4,7 +4,9 @@ import com.cskaoyan.bean.Region;
 import com.cskaoyan.bean.RegionExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Component;
 
+@Component
 public interface RegionMapper {
     long countByExample(RegionExample example);
 

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cskaoyan.mapper.StatMapper">
+
+    <select id="countUsers" resultType="map">
+        SELECT SUBSTR(add_time,1,10) as day,count(*) as users from cskaoyan_mall_user
+        GROUP BY SUBSTR(add_time,1,10)
+    </select>
+
+    <select id="countOrders" resultType="map">
+        SELECT
+        SUBSTR(add_time,1,10) as day,
+        count(id) as orders,
+        count(user_id) as customers,
+        sum(actual_price) as amount,
+        sum(actual_price)/count(user_id) as pcr
+        from cskaoyan_mall_order GROUP BY SUBSTR(add_time,1,10)
+    </select>
+    
+    <select id="countGoods" resultType="map">
+        SELECT
+        SUBSTR(add_time,1,10) as day,
+        count(order_id) as orders,
+        count(number) as products,
+        sum(price * number) as amount
+        from cskaoyan_mall_order_goods GROUP BY SUBSTR(add_time,1,10)
+    </select>
+
+</mapper>

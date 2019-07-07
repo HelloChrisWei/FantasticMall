@@ -2,8 +2,10 @@ package com.cskaoyan.mapper;
 
 import com.cskaoyan.bean.Role;
 import com.cskaoyan.bean.RoleExample;
-import java.util.List;
+import com.cskaoyan.util.PageUtil;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface RoleMapper {
     long countByExample(RoleExample example);
@@ -27,4 +29,11 @@ public interface RoleMapper {
     int updateByPrimaryKeySelective(Role record);
 
     int updateByPrimaryKey(Role record);
+
+    List<Role> selectRole();
+
+    List<Role> selectRoleByPage(@Param("limit") int limit, @Param("offset") int offset);
+
+    List<Role> selectRoleByName(@Param("name") String name);
+
 }

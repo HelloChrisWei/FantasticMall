@@ -27,4 +27,12 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+
+    List<User> selectAllUserByPage();
+
+    List<User> selectUserByUsername(@Param("username") String username);
+
+    List<User> selectUserByUserMobile(@Param("mobile") String mobile);
+
+    List<User> selectUserByUserUserAndMobile(@Param("username") String username,@Param("mobile") String mobile);
 }

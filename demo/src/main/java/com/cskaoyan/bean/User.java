@@ -1,5 +1,7 @@
 package com.cskaoyan.bean;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class User {
@@ -66,7 +68,7 @@ public class User {
     public void setGender(Byte gender) {
         this.gender = gender;
     }
-
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd")
     public Date getBirthday() {
         return birthday;
     }

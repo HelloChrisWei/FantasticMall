@@ -382,4 +382,72 @@
       deleted = #{deleted,jdbcType=BIT}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="selectAllUserByPage" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from cskaoyan_mall_user
+  </select>
+  <select id="selectUserByUsername" resultMap="BaseResultMap">
+    select
+        id,
+        username,
+        password,
+        gender,
+        birthday,
+        last_login_time,
+        last_login_ip,
+        user_level,
+        nickname,
+        mobile,
+        avatar,
+        weixin_openid,
+        status,
+        add_time,
+        update_time,
+        deleted
+    from cskaoyan_mall_user
+    where username like #{username}
+  </select>
+  <select id="selectUserByMobile" resultMap="BaseResultMap">
+    select
+        id,
+        username,
+        password,
+        gender,
+        birthday,
+        last_login_time,
+        last_login_ip,
+        user_level,
+        nickname,
+        mobile,
+        avatar,
+        weixin_openid,
+        status,
+        add_time,
+        update_time,
+        deleted
+    from cskaoyan_mall_user
+    where mobile like #{mobile}
+  </select>
+  <select id="selectUserByUserUserAndMobile" resultMap="BaseResultMap">
+    select
+        id,
+        username,
+        password,
+        gender,
+        birthday,
+        last_login_time,
+        last_login_ip,
+        user_level,
+        nickname,
+        mobile,
+        avatar,
+        weixin_openid,
+        status,
+        add_time,
+        update_time,
+        deleted
+    from cskaoyan_mall_user
+    where username like #{username} and mobile like #{mobile}
+  </select>
 </mapper>

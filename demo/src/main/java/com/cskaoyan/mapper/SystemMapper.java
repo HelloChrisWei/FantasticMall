@@ -1,5 +1,6 @@
 package com.cskaoyan.mapper;
 
+import com.cskaoyan.bean.MallSystem;
 import com.cskaoyan.bean.System;
 import com.cskaoyan.bean.SystemExample;
 import java.util.List;
@@ -27,4 +28,6 @@ public interface SystemMapper {
     int updateByPrimaryKeySelective(System record);
 
     int updateByPrimaryKey(System record);
+    //自增查询
+
 }
