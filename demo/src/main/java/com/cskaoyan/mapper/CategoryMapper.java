@@ -8,6 +8,12 @@ import org.springframework.stereotype.Component;
 
 @Component
 public interface CategoryMapper {
+    List<Category> getL1();
+
+    List<Category> getL2(Integer id);
+
+    int updateL2Pid(@Param("id") Integer id,@Param("pid") Integer pid);
+
     long countByExample(CategoryExample example);
 
     int deleteByExample(CategoryExample example);
