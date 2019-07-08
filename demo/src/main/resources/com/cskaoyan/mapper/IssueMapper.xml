@@ -70,6 +70,25 @@
   <sql id="Base_Column_List">
     id, question, answer, add_time, update_time, deleted
   </sql>
+  <select id="select" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from cskaoyan_mall_issue
+    <where>
+      <if test="question != null">
+         and question like #{question}
+      </if>
+    </where>
+  </select>
+  <select id="count" resultType="java.lang.Long">
+    select count(*) from cskaoyan_mall_issue
+    <where>
+      <if test="question != null">
+        and question like #{question}
+      </if>
+    </where>
+  </select>
+
   <select id="selectByExample" parameterType="com.cskaoyan.bean.IssueExample" resultMap="BaseResultMap">
     select
     <if test="distinct">

@@ -4,7 +4,9 @@ import com.cskaoyan.bean.User;
 import com.cskaoyan.bean.UserExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Component;
 
+@Component
 public interface UserMapper {
     long countByExample(UserExample example);
 

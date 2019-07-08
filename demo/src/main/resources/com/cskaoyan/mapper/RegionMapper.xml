@@ -67,7 +67,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, pid, name, type, code
+    id, pid, `name`, `type`, `code`
   </sql>
   <select id="selectByExample" parameterType="com.cskaoyan.bean.RegionExample" resultMap="BaseResultMap">
     select
@@ -83,8 +83,20 @@
       order by ${orderByClause}
     </if>
   </select>
+  <select id="selectByType"  resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from cskaoyan_mall_region
+    where `type` = #{type,jdbcType=TINYINT}
+  </select>
+  <select id="selectByPidAndType"  resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from cskaoyan_mall_region
+    where `type` = #{type,jdbcType=TINYINT} and pid = #{id,jdbcType=INTEGER}
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from cskaoyan_mall_region
     where id = #{id,jdbcType=INTEGER}
@@ -100,8 +112,8 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.cskaoyan.bean.Region">
-    insert into cskaoyan_mall_region (id, pid, name, 
-      type, code)
+    insert into cskaoyan_mall_region (id, pid, `name`,
+      `type`, code)
     values (#{id,jdbcType=INTEGER}, #{pid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
       #{type,jdbcType=TINYINT}, #{code,jdbcType=INTEGER})
   </insert>
@@ -115,10 +127,10 @@
         pid,
       </if>
       <if test="name != null">
-        name,
+        `name`,
       </if>
       <if test="type != null">
-        type,
+        `type`,
       </if>
       <if test="code != null">
         code,
@@ -158,10 +170,10 @@
         pid = #{record.pid,jdbcType=INTEGER},
       </if>
       <if test="record.name != null">
-        name = #{record.name,jdbcType=VARCHAR},
+        `name` = #{record.name,jdbcType=VARCHAR},
       </if>
       <if test="record.type != null">
-        type = #{record.type,jdbcType=TINYINT},
+        `type` = #{record.type,jdbcType=TINYINT},
       </if>
       <if test="record.code != null">
         code = #{record.code,jdbcType=INTEGER},
@@ -175,8 +187,8 @@
     update cskaoyan_mall_region
     set id = #{record.id,jdbcType=INTEGER},
       pid = #{record.pid,jdbcType=INTEGER},
-      name = #{record.name,jdbcType=VARCHAR},
-      type = #{record.type,jdbcType=TINYINT},
+      `name` = #{record.name,jdbcType=VARCHAR},
+      `type` = #{record.type,jdbcType=TINYINT},
       code = #{record.code,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -189,10 +201,10 @@
         pid = #{pid,jdbcType=INTEGER},
       </if>
       <if test="name != null">
-        name = #{name,jdbcType=VARCHAR},
+        `name` = #{name,jdbcType=VARCHAR},
       </if>
       <if test="type != null">
-        type = #{type,jdbcType=TINYINT},
+        `type` = #{type,jdbcType=TINYINT},
       </if>
       <if test="code != null">
         code = #{code,jdbcType=INTEGER},
@@ -203,8 +215,8 @@
   <update id="updateByPrimaryKey" parameterType="com.cskaoyan.bean.Region">
     update cskaoyan_mall_region
     set pid = #{pid,jdbcType=INTEGER},
-      name = #{name,jdbcType=VARCHAR},
-      type = #{type,jdbcType=TINYINT},
+      `name` = #{name,jdbcType=VARCHAR},
+      `type` = #{type,jdbcType=TINYINT},
       code = #{code,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>

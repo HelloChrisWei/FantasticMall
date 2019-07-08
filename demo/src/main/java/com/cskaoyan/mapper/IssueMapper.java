@@ -4,8 +4,14 @@ import com.cskaoyan.bean.Issue;
 import com.cskaoyan.bean.IssueExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Component;
 
+@Component
 public interface IssueMapper {
+    List<Issue> select(@Param("question") String question,@Param("sort") String sort,@Param("order") String order);
+
+    long count(@Param("question") String question);
+
     long countByExample(IssueExample example);
 
     int deleteByExample(IssueExample example);

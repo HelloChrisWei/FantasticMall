@@ -8,6 +8,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 public interface RegionMapper {
+    List<Region> selectByType(Byte type);
+
+    List<Region> selectByPidAndType(@Param("type") Byte type,@Param("id") Integer pid);
+
     long countByExample(RegionExample example);
 
     int deleteByExample(RegionExample example);

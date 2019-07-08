@@ -2,6 +2,7 @@ package com.cskaoyan.controller.store;
 
 import com.cskaoyan.bean.Region;
 import com.cskaoyan.service.store.RegionService;
+import com.cskaoyan.vo.RegionReadVO;
 import com.cskaoyan.vo.StoreVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,7 +17,7 @@ public class RegionController {
     @RequestMapping("region/list")
     @ResponseBody
     public StoreVO<Region> regionList(){
-        StoreVO<Region> regionRegionVO = regionService.regionList();
-        return regionRegionVO;
+        StoreVO<Region> regionStoreVO = regionService.regionList();
+        return regionStoreVO;
     }
 }

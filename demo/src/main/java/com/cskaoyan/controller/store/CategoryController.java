@@ -2,10 +2,7 @@ package com.cskaoyan.controller.store;
 
 import com.cskaoyan.bean.Category;
 import com.cskaoyan.service.store.CategoryService;
-import com.cskaoyan.vo.CategoryReadVO;
-import com.cskaoyan.vo.CategoryVO;
-import com.cskaoyan.vo.L1MapVO;
-import com.cskaoyan.vo.ReadVO;
+import com.cskaoyan.vo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,5 +27,15 @@ public class CategoryController {
     @ResponseBody
     public ReadVO categoryUpdate(@RequestBody CategoryVO categoryVO){
         return categoryService.categoryUpdate(categoryVO);
+    }
+    @RequestMapping("category/create")
+    @ResponseBody
+    public SingleReadVO categoryCreate(@RequestBody Category category){
+        return categoryService.categoryCreate(category);
+    }
+    @RequestMapping("category/delete")
+    @ResponseBody
+    public ReadVO categoryDelete(@RequestBody CategoryVO categoryVO){
+        return categoryService.categoryDelete(categoryVO);
     }
 }

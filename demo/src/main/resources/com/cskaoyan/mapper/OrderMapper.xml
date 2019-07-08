@@ -93,6 +93,39 @@
     pay_id, pay_time, ship_sn, ship_channel, ship_time, confirm_time, comments, end_time, 
     add_time, update_time, deleted
   </sql>
+  <select id="select" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from cskaoyan_mall_order
+    <where>
+      <if test="orderStatusArray != null">
+        and order_status = #{orderStatusArray}
+      </if>
+      <if test="userId!=null" >
+        and user_id like #{userId}
+      </if>
+      <if test="orderSn != null">
+        and order_sn like #{orderSn}
+      </if>
+    </where>
+    <if test="order!=null">
+      order by #{sort} #{order}
+    </if>
+  </select>
+  <select id="count"  resultType="java.lang.Long">
+    select count(*) from cskaoyan_mall_order
+    <where>
+      <if test="orderStatusArray != null">
+        and order_status = #{orderStatusArray}
+      </if>
+      <if test="userId!=null" >
+        and user_id like #{userId}
+      </if>
+      <if test="orderSn != null">
+        and order_sn like #{orderSn}
+      </if>
+    </where>
+  </select>
   <select id="selectByExample" parameterType="com.cskaoyan.bean.OrderExample" resultMap="BaseResultMap">
     select
     <if test="distinct">

@@ -32,7 +32,7 @@ public class Region {
     }
 
     public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+        this.name = name;
     }
 
     public Byte getType() {

@@ -3,15 +3,15 @@ package com.cskaoyan.service.store.Impl;
 import com.cskaoyan.bean.Category;
 import com.cskaoyan.mapper.CategoryMapper;
 import com.cskaoyan.service.store.CategoryService;
-import com.cskaoyan.vo.CategoryReadVO;
-import com.cskaoyan.vo.CategoryVO;
-import com.cskaoyan.vo.L1MapVO;
-import com.cskaoyan.vo.ReadVO;
+import com.cskaoyan.vo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
@@ -41,13 +41,12 @@ public class CategoryServiceImpl implements CategoryService {
             categoryReadVO.setErrmsg("查询成功");
             categoryReadVO.setErrno(0);
             return categoryReadVO;
-        }catch (Exception e){
+        } catch (Exception e) {
             categoryReadVO.setErrmsg("查询失败");
             categoryReadVO.setErrno(1);
             return categoryReadVO;
         }
     }
-
 
 
     @Override
@@ -80,16 +79,79 @@ public class CategoryServiceImpl implements CategoryService {
             }
             vo.setErrmsg("修改成功");
             vo.setErrno(0);
-        }catch (Exception e){
+        } catch (Exception e) {
             vo.setErrno(1);
             vo.setErrmsg("修改出现了错误");
         }
         return vo;
     }
 
-    public L1MapVO categoryL1(){
+    @Override
+    public SingleReadVO categoryCreate(Category category) {
+        SingleReadVO<Category> vo = new SingleReadVO<>();
+        try {
+            categoryMapper.insert(category);
+            vo.setData(categoryMapper.selectByPrimaryKey(category.getId()));
+            vo.setErrmsg("新增成功");
+            vo.setErrno(0);
+            return vo;
+        } catch (Exception e) {
+            e.printStackTrace();
+            vo.setErrno(1);
+            vo.setErrmsg("新增失败");
+            return vo;
+        }
+    }
+
+    @Override
+    public ReadVO categoryDelete(CategoryVO categoryVO) {
+        ReadVO<Category> vo = new ReadVO<>();
+        Category c = new Category();
+        VO2c(categoryVO, c);
+        Category category = categoryMapper.selectByPrimaryKey(categoryVO.getId());
+        try {
+            if ("L1".equals(category.getLevel())) {
+                //如果原来是L1,则除了删除本身还要删除其下所有子类
+                categoryMapper.deleteByPrimaryKey(c.getId());
+                //获取其下所有L2商品
+                List<Category> l2 = categoryMapper.getL2(c.getId());
+                for (Category ca:l2) {
+                    categoryMapper.deleteByPrimaryKey(ca.getId());
+                }
+            } else {
+                categoryMapper.deleteByPrimaryKey(c.getId());
+            }
+            vo.setErrmsg("修改成功");
+            vo.setErrno(0);
+        } catch (Exception e) {
+            vo.setErrno(1);
+            vo.setErrmsg("修改出现了错误");
+        }
+        return vo;
+    }
+
+    public L1MapVO categoryL1() {
         L1MapVO mapVO = new L1MapVO();
-        return mapVO;
+        try {
+            List<Category> l1 = categoryMapper.getL1();
+            ArrayList<Map> maps = new ArrayList<>();
+            for (Category c : l1) {
+                HashMap<String, String> map = new HashMap<>();
+                map.put("label", c.getName());
+                map.put("value", c.getId().toString());
+                maps.add(map);
+            }
+            mapVO.setDate(maps);
+            mapVO.setErrmsg("成功");
+            mapVO.setErrno(0);
+            return mapVO;
+        } catch (Exception e) {
+            e.printStackTrace();
+            mapVO.setErrno(1);
+            mapVO.setErrmsg("失败");
+            return mapVO;
+        }
+
     }
 
     private void VO2c(CategoryVO categoryVO, Category c) {
@@ -106,6 +168,7 @@ public class CategoryServiceImpl implements CategoryService {
         c.setSortOrder(categoryVO.getSortOrder());
         c.setUpdateTime(categoryVO.getUpdateTime());
     }
+
     private void c2VO(Category c, CategoryVO categoryVO) {
         categoryVO.setAddTime(c.getAddTime());
         categoryVO.setDeleted(c.getDeleted());
