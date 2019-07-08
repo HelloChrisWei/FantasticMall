@@ -1,7 +1,7 @@
 # Common Configurations
 spring:
   profiles:
-    active: hjx
+    active: weihao
 
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -40,14 +40,15 @@ spring:
     #    driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: 123456
-    url: jdbc:mysql://localhost:3306/mall
+    url: jdbc:mysql://localhost:3306/mall?useSSL=false&characterEncoding=UTF-8
+
 ---
 spring:
   profiles: donghao
   datasource:
     username: root
     password: root
-    url: jdbc:mysql://localhost:3306/cskaoyanmall
+    url: jdbc:mysql://localhost:3306/cskaoyanmall?useSSL=false&characterEncoding=UTF-8
 ---
 spring:
   profiles: hjx

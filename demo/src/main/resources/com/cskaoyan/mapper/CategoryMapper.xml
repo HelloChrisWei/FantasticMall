@@ -77,18 +77,6 @@
     id, `name`, keywords, `desc`, pid, icon_url, pic_url, `level`, sort_order, add_time, update_time,
     deleted
   </sql>
-  <select id="getL1" resultMap="BaseResultMap">
-    select
-    <include refid="Base_Column_List"/>
-    from cskaoyan_mall_category
-    where `level`='L1'
-  </select>
-  <select id="getL2" resultMap="BaseResultMap">
-    select
-    <include refid="Base_Column_List"/>
-    from cskaoyan_mall_category
-    where `level`='L2' and pid = #{id}
-  </select>
   <select id="selectByExample" parameterType="com.cskaoyan.bean.CategoryExample" resultMap="BaseResultMap">
     select
     <if test="distinct">

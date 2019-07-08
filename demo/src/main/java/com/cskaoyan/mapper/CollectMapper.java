@@ -27,4 +27,12 @@ public interface CollectMapper {
     int updateByPrimaryKeySelective(Collect record);
 
     int updateByPrimaryKey(Collect record);
+
+    List<Collect> selectAllCollect();
+
+    List<Collect> selectCollectByUserIdAndValueId(@Param("userId") Integer userId, @Param("valueId") Integer valueId);
+
+    List<Collect> selectCollectByUserId(@Param("userId") Integer userId);
+
+    List<Collect> selectCollectByValueId(@Param("valueId") Integer valueId);
 }

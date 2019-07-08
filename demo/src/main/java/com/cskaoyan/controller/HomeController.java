@@ -1,8 +1,8 @@
 package com.cskaoyan.controller;
 
-import com.cskaoyan.vo.SingleReadVO;
-import com.cskaoyan.vo.SysReadVO;
-import com.cskaoyan.vo.SysResultVO;
+import com.cskaoyan.util.SingleReadVO;
+import com.cskaoyan.util.SysReadVO;
+import com.cskaoyan.util.SysResultVO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -16,11 +16,7 @@ public class HomeController {
     @RequestMapping("/auth/login")
     @ResponseBody
     public SingleReadVO login() {
-        SingleReadVO<Object> readVO = new SingleReadVO<>();
-        readVO.setData("c3818fc8-8d14-4aca-925d-fea28cfc4522");
-        readVO.setErrmsg("成功");
-        readVO.setErrno(0);
-        return readVO;
+        return new SingleReadVO<>("c3818fc8-8d14-4aca-925d-fea28cfc4522", "成功", 0);
     }
 
     @RequestMapping("/auth/info")
@@ -45,7 +41,5 @@ public class HomeController {
         readVO.setErrno(0);
 
         return readVO;
-
     }
-
 }

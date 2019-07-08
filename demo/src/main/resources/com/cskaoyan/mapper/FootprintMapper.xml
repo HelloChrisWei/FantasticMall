@@ -225,4 +225,37 @@
       deleted = #{deleted,jdbcType=BIT}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="selectAllFootprint" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from cskaoyan_mall_footprint
+  </select>
+  <select id="selectFootprintByUserId" resultMap="BaseResultMap">
+    select user_id,
+            goods_id,
+            add_time,
+            update_time,
+            deleted
+    from cskaoyan_mall_footprint
+    where user_id = #{userId}
+  </select>
+  <select id="selectFootprintByGoodsId" resultMap="BaseResultMap">
+    select user_id,
+            goods_id,
+            add_time,
+            update_time,
+            deleted
+    from cskaoyan_mall_footprint
+    where goods_id = #{goodsId}
+  </select>
+  <select id="selectFootprintByUserIdAndGoodsId" resultMap="BaseResultMap">
+    select user_id,
+            goods_id,
+            add_time,
+            update_time,
+            deleted
+    from cskaoyan_mall_footprint
+    where user_id = #{userId} and goodsId = #{goodsId}
+  </select>
+
 </mapper>

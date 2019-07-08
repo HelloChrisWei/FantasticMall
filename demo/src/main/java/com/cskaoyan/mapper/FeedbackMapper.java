@@ -27,4 +27,12 @@ public interface FeedbackMapper {
     int updateByPrimaryKeySelective(Feedback record);
 
     int updateByPrimaryKey(Feedback record);
+
+    List<Feedback> selectAllFeedback();
+
+    List<Feedback> selectFeedBackByUsernameAndFeedBackId(@Param("username") String username,@Param("id") Integer id);
+
+    List<Feedback> selectFeedBackByUsername(@Param("username") String username);
+
+    List<Feedback> selectFeedBackByFeedBackId(@Param("id") Integer id);
 }
