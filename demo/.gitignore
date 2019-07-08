@@ -37,3 +37,4 @@ generatorConfig.xml
 .class
 test/
 application.yml
+crawl.log

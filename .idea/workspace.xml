@@ -2,35 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33ad4582-7e70-4a9c-9828-43e55b7fe9e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_aliyun_oss_aliyun_sdk_oss_2_8_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__joda_time_joda_time_2_10_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jdom_jdom_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/config/AliyunConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/config/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/controller/ad/AdminStorageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/src/main/resources/aliyun.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crawl.log" beforeDir="false" afterPath="$PROJECT_DIR$/crawl.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/bean/Region.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/bean/Region.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/controller/store/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/controller/store/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/controller/store/RegionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/controller/store/RegionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/mapper/IssueMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/mapper/IssueMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/mapper/OrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/mapper/OrderMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/mapper/RegionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/mapper/RegionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/service/store/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/service/store/CategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/service/store/Impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/service/store/Impl/CategoryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/service/store/Impl/RegionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/service/store/Impl/RegionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/service/store/RegionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/service/store/RegionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/com/cskaoyan/mapper/IssueMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/resources/com/cskaoyan/mapper/IssueMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/com/cskaoyan/mapper/OrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/resources/com/cskaoyan/mapper/OrderMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/com/cskaoyan/mapper/RegionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/resources/com/cskaoyan/mapper/RegionMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/demo/.gitignore" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/demo/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,8 +21,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/controller/store/issueController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+            <state relative-caret-position="359">
+              <caret line="41" column="1" lean-forward="true" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1276#1277#0" expanded="true" />
@@ -75,7 +48,7 @@
         <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/service/store/Impl/IssueServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="379">
-              <caret line="91" column="22" lean-forward="true" selection-start-line="91" selection-start-column="22" selection-end-line="91" selection-end-column="22" />
+              <caret line="91" column="22" selection-start-line="91" selection-start-column="22" selection-end-line="91" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -126,7 +99,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/demo/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/demo/.gitignore" />
         <option value="$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/config/AliyunConfig.java" />
         <option value="$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/vo/L1MapVO.java" />
         <option value="$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/controller/store/CategoryController.java" />
@@ -156,6 +128,7 @@
         <option value="$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/service/store/IssueService.java" />
         <option value="$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/service/store/Impl/IssueServiceImpl.java" />
         <option value="$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/controller/store/issueController.java" />
+        <option value="$PROJECT_DIR$/demo/.gitignore" />
       </list>
     </option>
   </component>
@@ -268,49 +241,7 @@
               <item name="demo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="cskaoyan" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FantasticMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FantasticMall" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FantasticMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FantasticMall" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FantasticMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FantasticMall" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="cskaoyan" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FantasticMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FantasticMall" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="cskaoyan" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -378,7 +309,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1562379682346</updated>
-      <workItem from="1562379683943" duration="41316000" />
+      <workItem from="1562379683943" duration="41565000" />
     </task>
     <task id="LOCAL-00001" summary="商品 by hjx">
       <created>1562380630723</created>
@@ -394,14 +325,28 @@
       <option name="project" value="LOCAL" />
       <updated>1562381293846</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update by hjx">
+      <created>1562576359067</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1562576359067</updated>
+    </task>
+    <task id="LOCAL-00004" summary="update by hjx">
+      <created>1562576391522</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1562576391522</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41316000" />
+    <option name="totallyTimeSpent" value="41565000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1932" height="1057" extended-state="0" />
+    <frame x="-7" y="0" width="1932" height="1057" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" />
@@ -410,10 +355,10 @@
       <window_info id="UI Designer" />
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Web" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Spring" />
-      <window_info anchor="bottom" id="Terminal" sideWeight="0.49946582" weight="0.32936078" />
+      <window_info anchor="bottom" id="Terminal" sideWeight="0.49946582" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" sideWeight="0.5005342" side_tool="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Messages" weight="0.32936078" />
@@ -423,7 +368,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.5785482" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5785482" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -470,20 +415,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="商品 by hjx" />
-    <option name="LAST_COMMIT_MESSAGE" value="商品 by hjx" />
+    <MESSAGE value="update by hjx" />
+    <option name="LAST_COMMIT_MESSAGE" value="update by hjx" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/MallApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="16" column="6" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -861,17 +800,24 @@
     <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/service/store/Impl/IssueServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="379">
-          <caret line="91" column="22" lean-forward="true" selection-start-line="91" selection-start-column="22" selection-end-line="91" selection-end-column="22" />
+          <caret line="91" column="22" selection-start-line="91" selection-start-column="22" selection-end-line="91" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/demo/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/cskaoyan/controller/store/issueController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        <state relative-caret-position="359">
+          <caret line="41" column="1" lean-forward="true" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1276#1277#0" expanded="true" />
