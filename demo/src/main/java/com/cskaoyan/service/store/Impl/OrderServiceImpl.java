@@ -1,12 +1,12 @@
 package com.cskaoyan.service.store.Impl;
 
-import com.cskaoyan.bean.Goods;
+
 import com.cskaoyan.bean.Order;
 import com.cskaoyan.bean.OrderExample;
 import com.cskaoyan.bean.User;
-import com.cskaoyan.mapper.GoodsMapper;
 import com.cskaoyan.mapper.OrderMapper;
 import com.cskaoyan.mapper.UserMapper;
+import com.cskaoyan.mapper.goods.GoodsMapper;
 import com.cskaoyan.service.store.OrderService;
 import com.cskaoyan.vo.*;
 import com.github.pagehelper.PageHelper;

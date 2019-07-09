@@ -1,6 +1,5 @@
 package com.cskaoyan.controller.userInformation;
 
-import com.cskaoyan.bean.EasyDataResult;
 import com.cskaoyan.bean.User;
 import com.cskaoyan.service.userInformaitonService.UserService;
 import com.cskaoyan.vo.ReadVO;

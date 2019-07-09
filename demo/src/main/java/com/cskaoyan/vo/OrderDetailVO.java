@@ -1,8 +1,9 @@
 package com.cskaoyan.vo;
 
-import com.cskaoyan.bean.Goods;
+
 import com.cskaoyan.bean.Order;
 import com.cskaoyan.bean.User;
+import com.cskaoyan.bean.goods.Goods;
 
 public class OrderDetailVO {
     Order order;

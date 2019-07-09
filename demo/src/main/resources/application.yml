@@ -1,7 +1,7 @@
 # Common Configurations
 spring:
   profiles:
-    active: weihao
+    active: hjx
 
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource

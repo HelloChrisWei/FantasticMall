@@ -1,6 +1,7 @@
 package com.cskaoyan.service.goods;
 
-import com.cskaoyan.bean.Comment;
+
+import com.cskaoyan.bean.goods.Comment;
 import com.cskaoyan.vo.GoodsHanderVO;
 import com.cskaoyan.vo.GoodsPreviewVO;
 

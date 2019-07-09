@@ -1,6 +1,6 @@
 package com.cskaoyan.service.userInformaitonService;
 
-import com.cskaoyan.bean.EasyDataResult;
+
 import com.cskaoyan.bean.User;
 import com.cskaoyan.mapper.UserMapper;
 import com.cskaoyan.vo.ReadVO;

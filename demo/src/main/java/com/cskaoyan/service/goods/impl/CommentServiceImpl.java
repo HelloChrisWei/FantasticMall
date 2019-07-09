@@ -1,7 +1,8 @@
 package com.cskaoyan.service.goods.impl;
-import com.cskaoyan.bean.Comment;
-import com.cskaoyan.bean.CommentExample;
-import com.cskaoyan.mapper.CommentMapper;
+
+import com.cskaoyan.bean.goods.Comment;
+import com.cskaoyan.bean.goods.CommentExample;
+import com.cskaoyan.mapper.goods.CommentMapper;
 import com.cskaoyan.service.goods.CommentService;
 import com.cskaoyan.vo.GoodsHanderVO;
 import com.cskaoyan.vo.GoodsPreviewVO;
