@@ -35,7 +35,6 @@ public class GoodsSpecification {
         this.goodsId = goodsId;
     }
 
-
     public String getSpecification() {
         return specification;
     }

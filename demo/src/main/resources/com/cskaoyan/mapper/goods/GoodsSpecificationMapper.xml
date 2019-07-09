@@ -4,7 +4,7 @@
   <resultMap id="BaseResultMap" type="com.cskaoyan.bean.goods.GoodsSpecification">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="goods_id" jdbcType="INTEGER" property="goodsId" />
-    <result column="specification" jdbcType="VARCHAR" property="specification" typeHandler="com.cskaoyan.utils.ArrayToStringHandler" />
+    <result column="specification" jdbcType="VARCHAR" property="specification"  />
     <result column="value" jdbcType="VARCHAR" property="value" />
     <result column="pic_url" jdbcType="VARCHAR" property="picUrl" />
     <result column="add_time" jdbcType="TIMESTAMP" property="addTime" />
@@ -106,7 +106,7 @@
     insert into cskaoyan_mall_goods_specification (id, goods_id, specification, 
       `value`, pic_url, add_time,
       update_time, deleted)
-    values (#{id,jdbcType=INTEGER}, #{goodsId,jdbcType=INTEGER}, #{specification,jdbcType=VARCHAR,typeHandler=com.cskaoyan.utils.ArrayToStringHandler},
+    values (#{id,jdbcType=INTEGER}, #{goodsId,jdbcType=INTEGER}, #{specification,jdbcType=VARCHAR},
       #{value,jdbcType=VARCHAR}, #{picUrl,jdbcType=VARCHAR}, #{addTime,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP}, #{deleted,jdbcType=BIT})
   </insert>
@@ -146,7 +146,7 @@
         #{goodsId,jdbcType=INTEGER},
       </if>
       <if test="specification != null">
-        #{specification,jdbcType=VARCHAR,typeHandler=com.cskaoyan.utils.ArrayToStringHandler},
+        #{specification,jdbcType=VARCHAR},
       </if>
       <if test="value != null">
         #{value,jdbcType=VARCHAR},
@@ -181,7 +181,7 @@
         goods_id = #{record.goodsId,jdbcType=INTEGER},
       </if>
       <if test="record.specification != null">
-        specification = #{record.specification,jdbcType=VARCHAR,typeHandler=com.cskaoyan.utils.ArrayToStringHandler},
+        specification = #{record.specification,jdbcType=VARCHAR},
       </if>
       <if test="record.value != null">
         `value` = #{record.value,jdbcType=VARCHAR},
@@ -207,7 +207,7 @@
     update cskaoyan_mall_goods_specification
     set id = #{record.id,jdbcType=INTEGER},
       goods_id = #{record.goodsId,jdbcType=INTEGER},
-      specification = #{record.specification,jdbcType=VARCHAR,typeHandler=com.cskaoyan.utils.ArrayToStringHandler},
+      specification = #{record.specification,jdbcType=VARCHAR},
       `value` = #{record.value,jdbcType=VARCHAR},
       pic_url = #{record.picUrl,jdbcType=VARCHAR},
       add_time = #{record.addTime,jdbcType=TIMESTAMP},
@@ -224,7 +224,7 @@
         goods_id = #{goodsId,jdbcType=INTEGER},
       </if>
       <if test="specification != null">
-        specification = #{specification,jdbcType=VARCHAR,typeHandler=com.cskaoyan.utils.ArrayToStringHandler},
+        specification = #{specification,jdbcType=VARCHAR},
       </if>
       <if test="value != null">
         value = #{value,jdbcType=VARCHAR},
@@ -247,7 +247,7 @@
   <update id="updateByPrimaryKey" parameterType="com.cskaoyan.bean.goods.GoodsSpecification">
     update cskaoyan_mall_goods_specification
     set goods_id = #{goodsId,jdbcType=INTEGER},
-      specification = #{specification,jdbcType=VARCHAR,typeHandler=com.cskaoyan.utils.ArrayToStringHandler},
+      specification = #{specification,jdbcType=VARCHAR},
       `value` = #{value,jdbcType=VARCHAR},
       pic_url = #{picUrl,jdbcType=VARCHAR},
       add_time = #{addTime,jdbcType=TIMESTAMP},

@@ -326,4 +326,21 @@
       pid = #{pid,jdbcType=INTEGER}
     where pid = #{id,jdbcType=INTEGER}
   </update>
+
+  <!--查询category的id和pid-->
+  <select id="selectIdsById" parameterType="com.cskaoyan.bean.Category" resultMap="BaseResultMap" >
+    select
+      id, pid
+    from
+      cskaoyan_mall_category
+      where id = #{id}
+  </select>
+  <!--查询category的id和name-->
+  <select id="selectCategoryList" parameterType="com.cskaoyan.bean.Category" resultMap="BaseResultMap" >
+    select
+      id, pid,name
+    from
+      cskaoyan_mall_category
+      where id = #{id}
+  </select>
 </mapper>
